@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import  Http404, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
 
@@ -16,7 +16,7 @@ monthly_challenges = {
     'July': 'learn python APIs!',
     'August': 'Do opensourse!',
     'September': 'Do data analytics work!',
-    'Octomber': 'start freelance earning!',
+    'October': 'start freelance earning!',
     'November': 'start saving!',
     'December': None
 }
@@ -45,9 +45,8 @@ def month_challenges(request, month):
     try:
         challenge_text = monthly_challenges[month]
         return render(request, 'challenges/challenge.html', {
-            'text':challenge_text,
-            'month_name':month
-        } )
+            'text': challenge_text,
+            'month_name': month
+        })
     except:
         raise Http404()
-  
